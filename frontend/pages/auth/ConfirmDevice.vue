@@ -137,7 +137,7 @@ const handleChoice = (choice: 'keep_current' | 'keep_other') => {
                         @click="handleChoice('keep_current')"
                     >
                         <Monitor class="mr-2 h-5 w-5" />
-                        {{ t('auth.concurrentSession.disconnectOther') }}
+                        {{ t('auth.concurrentSession.stayOnThisDevice') }}
                     </Button>
                     <Button
                         variant="outline"
@@ -147,7 +147,7 @@ const handleChoice = (choice: 'keep_current' | 'keep_other') => {
                         @click="handleChoice('keep_other')"
                     >
                         <Smartphone class="mr-2 h-5 w-5" />
-                        {{ t('auth.concurrentSession.stayOnOther') }}
+                        {{ t('common.cancel') }}
                     </Button>
                 </div>
 

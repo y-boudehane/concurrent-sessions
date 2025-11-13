@@ -155,17 +155,7 @@ const handleChoice = async (choice: 'keep_current' | 'keep_other') => {
                     >
                         <Loader2 v-if="submitting" class="mr-2 h-5 w-5 animate-spin" />
                         <Monitor v-else class="mr-2 h-5 w-5" />
-                        {{ t('auth.concurrentSession.disconnectOther') }}
-                    </Button>
-                    <Button
-                        variant="outline"
-                        class="flex-1"
-                        size="lg"
-                        :disabled="submitting"
-                        @click="handleChoice('keep_other')"
-                    >
-                        <Smartphone class="mr-2 h-5 w-5" />
-                        {{ t('auth.concurrentSession.stayOnOther') }}
+                        {{ t('auth.concurrentSession.stayOnThisDevice') }}
                     </Button>
                 </div>
 

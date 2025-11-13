@@ -13,7 +13,19 @@ class ConfirmSessionMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // No redirect logic needed - dialogs handle everything via WebSocket
-        return $next($request);
+        if ($request->is('broadcasting/auth')) {
+            return $next($request);
+        }
+
+        if ($request->routeIs('confirm-device*')) {
+            return $next($request);
+        }
+
+
+
+        // If current session is flagged as awaiting confirmation
+        if ($request->session()->get('awaiting_confirmation')) {
+            return redirect()->route('confirm-device');
+        }
     }
 }

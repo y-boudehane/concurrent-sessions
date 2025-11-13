@@ -47,7 +47,7 @@ export function useSessionMonitor() {
             })
             .listen('.session-confirmed', () => {
                 showConcurrentSessionDialog.value = false;
-                router.visit('/');
+                router.reload();
             })
             .error((error: any) => {
                 console.error('Channel subscription error:', error);
